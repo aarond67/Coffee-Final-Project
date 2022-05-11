@@ -8,12 +8,12 @@ public class year
     month where that specific drink was the most selling
     */
     private double totalIncome = 0;
-    private month[] months = new month[12];
+    private month[] months;
     private String mostpop;
     private String leastpop;
     private int amountOfDrinks;
-    public year(){
-        
+    public year(int schoolyear){
+        months = new month[schoolyear];
     }
     public boolean addMonth(month m1){
         for(int i = 0; i < months.length; i++){
@@ -25,6 +25,6 @@ public class year
         return false;
     }
     public String popularDrink()[
-        for(int i )
+        
     ]
 }
