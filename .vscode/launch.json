@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch starter",
+            "request": "launch",
+            "mainClass": "starter",
+            "projectName": "Coffee Final_42a61dee"
+        },
+        {
             "name": "Java",
             "type": "java",
             "request": "launch",
