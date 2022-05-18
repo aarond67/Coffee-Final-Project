@@ -2,11 +2,11 @@ import java.util.ArrayList;
 public class Order
 {
     private ArrayList <String> list = new ArrayList <String>();
-    private String name;
+    /*private String name;*/
     private double price;
     private ArrayList <String> listOfDrinks;
     public Order(String name, ArrayList <String> listOfDrinks1){
-        this.name = name;
+        /*this.name = name;*/
         listOfDrinks = listOfDrinks1;
     }
     public boolean addOrder(String nameo){

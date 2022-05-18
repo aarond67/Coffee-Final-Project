@@ -7,9 +7,10 @@ public class month
      most popular 
      */
      private String name;
-     private double totalIncome = 0;
+    /* private double totalIncome = 0;
      private double incomePerDay = 0;
      private String mostpop;
+     */
      private Day[] days; 
      private ArrayList <String> listOfDrinks = new ArrayList<String> ();
      public month(String name, int numDay){

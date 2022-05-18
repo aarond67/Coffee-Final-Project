@@ -10,9 +10,9 @@ public class Register
      */
     private ArrayList <String> listOfDrinks;
     private ArrayList <Order> orders;
-    private String[] listOfWorkers;
+   /* private String[] listOfWorkers;*/
     public Register(String [] listOfWorkers1, ArrayList <String> listOfDrinks1){
-        listOfWorkers = listOfWorkers1;
+        /*listOfWorkers = listOfWorkers1;*/
         orders = new ArrayList <Order>();
         listOfDrinks = listOfDrinks1;
     }
@@ -22,6 +22,7 @@ public class Register
         boolean orderInP= true;
         System.out.println("Please start the order");
         while(orderInP){
+            while(userinput.hasNextLine()){
             String choice = userinput.nextLine();
             if(choice.equalsIgnoreCase("No") || choice.equalsIgnoreCase("Nope")){
                 System.out.println(newo.showOrder());
@@ -29,6 +30,8 @@ public class Register
                 choice = userinput.nextLine();
                 if(choice.equalsIgnoreCase("Yep") || choice.equalsIgnoreCase("Yes")){
                     orderInP = false;
+                    System.out.println("");
+                    break;
                 }else if(choice.equalsIgnoreCase("No") || choice.equalsIgnoreCase("Nope")){
                     System.out.println("Then please add the new item or select the number of the item you want to delete");
                 }
@@ -41,6 +44,8 @@ public class Register
                 }
             }
         }
+        }
+        userinput.close();
         orders.add(newo);
         return newo;
     }

@@ -8,7 +8,7 @@ public class Day
       orders with list of drinks and prices
       orders made and then recursion to find the specific persona then order sort
      */
-    private int totIncome;
+   /* private int totIncome;*/
     private ArrayList <Order> orders;
     private String[] moringShift = new String[3];
     private String[] lunchShift = new String[3];
@@ -39,14 +39,20 @@ public class Day
         boolean dayIsGoing = true;
         while(dayIsGoing){
             System.out.println("Ask the person for their name then their order will start. When you are done with the day type 'Finish Day'.");
-            String input = userinput.nextLine();
-            if(input.equals("Finish Day")){
+            while(userinput.hasNextLine()){
+                String input = userinput.nextLine();
+                if(input.equals("Finish Day")){
+                    dayIsGoing = false;
+                }else{
+                    orders.add(working.makeOrder(input));
+                    break;
+                }
+            }
+            if (!(userinput.hasNextLine())) {
                 dayIsGoing = false;
-            }else{
-                orders.add(working.makeOrder(input));
             }
         }
-        
+        userinput.close();
         return dayIsGoing;
     }
     private Register makeARegister(String shift){

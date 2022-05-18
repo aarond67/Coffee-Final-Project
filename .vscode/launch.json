@@ -9,7 +9,11 @@
             "name": "Launch starter",
             "request": "launch",
             "mainClass": "starter",
-            "projectName": "Coffee Final_42a61dee"
+            "projectName": "Coffee Final_42a61dee",
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal",
+            "startupClass": "${fileBasenameNoExtension}",
         },
         {
             "name": "Java",
@@ -42,7 +46,10 @@
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "${file}",
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
         }
     ]
 }

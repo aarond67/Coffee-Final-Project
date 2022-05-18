@@ -1,5 +1,5 @@
 import java.text.DateFormatSymbols;
-import java.util.Calendar;
+
 import java.util.Scanner;
 public class year
 {
@@ -10,18 +10,21 @@ public class year
     amounts of drinks sold 
     month where that specific drink was the most selling
     */
-    private double totalIncome = 0;
-    private month[] months;
-    private String mosdtpop;
+    
+    private month[] months = new month[9];
+    /*private String mostpop = "s";
     private String leastpop;
+    private double totalIncome = 0.0 ;
     private int amountOfDrinks;
+    */
     String[] months1 = new DateFormatSymbols().getMonths();
     public year(String year){
         if(year.equalsIgnoreCase("School Year")){
             months = new month[9];
-            for(int i = 0; i < months.length; i++){
+            for(int i = 0; i < 9; i++){
                 if(i <= 4){
                     months[i] = new month(months1[i+7], 30);
+                    System.out.println(months[i].getName());
                 }else{
                     months[i] = new month(months1[i-5], 30);
                 }
@@ -40,15 +43,23 @@ public class year
                 System.out.println("Alright I see you have choose " + usermonth.getName() + ". \nNow please select the day you want to choose to start working");
                 int dateInput = userinput.nextInt();
                 System.out.println("Alright you have choosen to work the " + dateInput + ". \nNow choose the shift that you are working today. Morning or Lunch");
-                String shiftInput = userinput.nextLine(); 
-                usermonth.beginDay(dateInput, shiftInput);
+                
+               
+                while(userinput.hasNextLine()){
+                    String shiftInput = userinput.nextLine(); 
+                    if(shiftInput.equalsIgnoreCase("Morning")||shiftInput.equalsIgnoreCase("Lunch")){
+                        usermonth.beginDay(dateInput, shiftInput);
+                    }
+                }
+                
+                userinput.close();
                 break;
             }
         }
     }
     private void print(){
-        for(int i = 0; i < months.length; i++){
-            System.out.println("[" + (i+1) + "] " +months[i].getName());
+        for(int i = 0; i < 9; i++){
+            System.out.println("[" + (i+1) + "] " + months[i].getName());
         }
     }
     
