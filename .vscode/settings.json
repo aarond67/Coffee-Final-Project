@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "Sever",
-        "Coffee Final/src"
+        "Coffee Final/src",
+        "Coffee Final"
     ]
 }
