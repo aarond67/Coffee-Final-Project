@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-public class month {
-    public static void main(String[] args) {
-        year something = new year();
-        System.out.println(something.claculator(5));
-
-    }
-=======
 public class month
 {
     /* barasita list for each day
@@ -35,5 +27,4 @@ public class month
         
     }
     
->>>>>>> 20fa543fefa18f9e79b4aae2e121d1d483c10667
 }
