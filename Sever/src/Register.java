@@ -16,13 +16,11 @@ public class Register
         orders = new ArrayList <Order>();
         listOfDrinks = listOfDrinks1;
     }
-    public Order makeOrder(String name){
+    public Order makeOrder(String name, Scanner userinput){
         Order newo = new Order(name, listOfDrinks);
-        Scanner userinput = new Scanner(System.in);
         boolean orderInP= true;
         System.out.println("Please start the order");
         while(orderInP){
-            while(userinput.hasNextLine()){
             String choice = userinput.nextLine();
             if(choice.equalsIgnoreCase("No") || choice.equalsIgnoreCase("Nope")){
                 System.out.println(newo.showOrder());
@@ -43,9 +41,9 @@ public class Register
                   System.out.println("You did not enter the a item on our menu please try again");  
                 }
             }
+        
         }
-        }
-        userinput.close();
+       
         orders.add(newo);
         return newo;
     }

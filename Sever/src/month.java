@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 public class month
 {
     /* barasita list for each day
@@ -34,9 +35,9 @@ public class month
              days[i] = newo;
          }
     }
-    public Day beginDay(int num,String shift){
+    public Day beginDay(int num,String shift, Scanner userinput){
         if(shift.equals("Morning")){
-            days[num-1].startDay(shift);
+            days[num-1].startDay(shift, userinput);
             return days[num-1];
         }
         System.out.println("WORNG");

@@ -33,26 +33,20 @@ public class Day
         listOfDrinks = newlistOfDrinks;
         orders = new ArrayList <Order>();
     }
-    public boolean startDay(String shift){
+    public boolean startDay(String shift, Scanner userinput){
         Register working = makeARegister(shift);
-        Scanner userinput = new Scanner(System.in);
+        
         boolean dayIsGoing = true;
         while(dayIsGoing){
             System.out.println("Ask the person for their name then their order will start. When you are done with the day type 'Finish Day'.");
-            while(userinput.hasNextLine()){
-                String input = userinput.nextLine();
-                if(input.equals("Finish Day")){
+            String input = userinput.nextLine();
+            if(input.equals("Finish Day")){
                     dayIsGoing = false;
-                }else{
-                    orders.add(working.makeOrder(input));
-                    break;
-                }
-            }
-            if (!(userinput.hasNextLine())) {
-                dayIsGoing = false;
+            }else{
+                    orders.add(working.makeOrder(input, userinput));
             }
         }
-        userinput.close();
+        
         return dayIsGoing;
     }
     private Register makeARegister(String shift){
